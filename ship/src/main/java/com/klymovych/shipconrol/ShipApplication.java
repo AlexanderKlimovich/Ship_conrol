@@ -1,4 +1,4 @@
-package com.klymovych.shipconrol.ship;
+package com.klymovych.shipconrol;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

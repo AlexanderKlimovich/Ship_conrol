@@ -20,7 +20,7 @@ public class AirPort {
 
     private int y;
 
-    private void addBoard(String boardName){
+   public void addBoard(String boardName){
         int ind = boards.indexOf(boardName);
 
         if(ind >= 0){
@@ -30,7 +30,7 @@ public class AirPort {
         }
     }
 
-    private void removwBoard(String boardName){
+    public void removeBoard(String boardName){
         boards.remove(boardName);
     }
 }
