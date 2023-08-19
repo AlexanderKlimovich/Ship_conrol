@@ -5,7 +5,7 @@
 
 	<groupId>com.klymovych.ship-conrol</groupId>
 	<artifactId>common</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>common</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
