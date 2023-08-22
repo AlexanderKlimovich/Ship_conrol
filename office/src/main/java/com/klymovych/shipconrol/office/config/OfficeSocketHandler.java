@@ -24,11 +24,11 @@ public class OfficeSocketHandler extends TextWebSocketHandler {
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        if(session.isOpen()){
+        if (session.isOpen()) {
             sessionCache.put(session.getId(), session);
         }
 
-        if(message.getPayload().equals("update")){
+        if (message.getPayload().equals("update")) {
             kafkaTemplate.sendDefault(messageConverter.toJson(new OfficeStateMessage()));
         }
     }
