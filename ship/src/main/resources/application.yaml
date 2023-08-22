@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8082
 
 spring:
   kafka:
@@ -7,17 +7,17 @@ spring:
     template:
       default-topic: officeRoutes
     consumer:
-      group-id: OfficeGroupId
+      group-id: BoardId
       auto-offset-reset: latest
 
 application:
-  ports:
-    - name: "Port 1"
-      x: 10
-      y: 20
-    - name: "Port 2"
-      x: 70
-      y: 40
-    - name: "Port 3"
-      x: 50
-      y: 80
+  boards:
+    - name: "Board 1"
+      location: "Port 1"
+      sped: 3
+    - name: "Board 2"
+      location: "Port 1"
+      sped: 4
+    - name: "Board 3"
+      location: "Port 2"
+      sped: 4
