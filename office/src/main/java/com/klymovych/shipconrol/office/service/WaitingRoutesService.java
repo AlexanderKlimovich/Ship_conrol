@@ -44,38 +44,4 @@ public class WaitingRoutesService {
         }
     }
 
-    public Route convertLocationsToRoute(List<String> locations) {
-        Route route = new Route();
-        List<RoutePath> routePaths = new ArrayList<>();
-        List<RoutePoint> points = new ArrayList<>();
-
-        locations.forEach(location -> {
-            airPortsProvider.getPorts().stream()
-                    .filter(airPort -> airPort.getName().equals(location))
-                    .findFirst()
-                    .ifPresent(airPort -> {
-                        points.add(new RoutePoint(airPort));
-                    });
-        });
-
-        for (int i = 0; i < points.size() - 1; i++) {
-            routePaths.add(new RoutePath());
-        }
-
-        routePaths.forEach(row -> {
-            int index = routePaths.indexOf(row);
-            if (row.getFrom() == null) {
-                row.setFrom(points.get(index));
-                if (points.size() > index + 1) {
-                    row.setTo(points.get(index + 1));
-                } else {
-                    row.setTo(points.get(index));
-                }
-            }
-        });
-
-        route.setPath(routePaths);
-
-        return route;
-    }
 }
